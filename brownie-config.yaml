@@ -1,0 +1,24 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.6.1
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.6.1'
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
+networks:
+  default: 'ganache-local'
+  mainnet-fork-dev:
+    eth_USD_price_feed_address: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+    publish: False
+  sepolia:
+    eth_USD_price_feed_address: '0x694AA1769357215DE4FAC081bf1f309aDC325306'
+    publish: True
+  goerli:
+    eth_USD_price_feed_address: '0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e'
+    publish: True
+  ganache-local:
+    publish: False
+  development:
+    publish: False
